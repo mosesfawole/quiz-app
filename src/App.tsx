@@ -79,18 +79,8 @@ const App: React.FC = () => {
             Start
           </button>
         ) : null}
-        {!gameOver ? <p className="score">Score: {score}</p> : null}
-        {score < 5 ? (
-          <p className={gameOver ? "block" : "hidden"}>
-            Oops, you scored below average{" "}
-          </p>
-        ) : score > 7 ? (
-          <p className={gameOver ? "hidden" : "block"}>You are a genius!!!</p>
-        ) : (
-          <p className={gameOver ? "hidden" : "block"}>
-            You scored a bove average
-          </p>
-        )}
+        {!gameOver && <p className="score">Score: {score}</p>}
+
         {loading ? <p>Loading Questions...</p> : null}
         {!loading && !gameOver && (
           <QuestionCard
